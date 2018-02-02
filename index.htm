@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes APP</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+
+    <script src="lib/js/jquery-3.2.1.js"></script>
+	<script src="lib/js/bootstrap.min.js"></script>
+	<script src="lib/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/js/handlebars.js"></script>
+	
+	<!-- PARA LA CLASE DE HIDDEN-MD-UP/DOWN -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+	<!-- <script src="https://use.fontawesome.com/372efed613.js"></script> -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+	<script src="js/config.js"></script>
+	<script src="js/todo.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/modalNew.js"></script>
+	<script src="js/modalVer.js"></script>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+	<!-- Modal GUARDADO-->
+	<div class="modal fade" id="modalDone" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">Mensaje:</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        Datos guardados correctamente.
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" id="aceptar" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Modal NEW-->
+	<div id="resultNew"></div>
+	<!-- Modal EDITAR-->
+	<div id="resultEdit"></div>
+	<!-- Modal VER-->
+	<div id="resultVer"></div>
+
+
+	<div class="container">
+		<div class="row tabla">
+			<div class="col-xl-2 col-lg-2 col-md col-sm">
+
+			</div>
+			<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+				<div class="align-top" ><button type="button" id="addCliente"><i class="fa fa-plus-circle" aria-hidden="true"></i> <span class="hidden-sm-down">AÑADIR CLIENTE</span></button></div>
+				<table class="table table-hover align-self-center">
+					<thead class="thead-dark">
+						<tr>
+							<th>Nombres</th>
+							<th class="hidden-sm-down">Ciudad</th>
+							<th>Sexo</th>
+							<th class="hidden-sm-down">Telefono</th>
+							<th class="hidden-sm-down">Fecha Nacimiento</th>
+							<th class="hidden-md-up" colspan="3">Opciones</th>
+							<th class="hidden-sm-down"  colspan="2">Opciones</th>
+						</tr>
+					</thead>
+					<tbody id="result">
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xl-2 col-lg-2 col-md col-sm">
+
+			</div>
+		</div>
+		<!-- <div class="row formulario">
+			<div class="col-xl-4 col-lg-4 col-md col-sm">
+
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+				<form>
+					<div class="form-group">
+						<label ">NOMBRES</label>
+						<input type="text" class="form-control" id="nombres1" onkeyup="this.value=this.value.toUpperCase()">
+					</div>
+					<div class="form-group">
+						<label ">CIUDAD</label>
+						<input type="text" class="form-control" id="ciudad1" onkeyup="this.value=this.value.toUpperCase()">
+					</div>
+					<div class="form-check form-check-inline">
+						
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampler" id="alternativas1M" value="M">
+						MASCULINO
+						</label>
+					</div>
+					<div class="form-check form-check-inline">
+						
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampler" id="alternativas1F" value="F">
+						FEMENINO
+						</label>
+					</div>
+					<div class="form-group">
+						<label ">TELEFONO</label>
+						<input type="text" class="form-control" id="telefono1" onkeyup="this.value=this.value.toUpperCase()">
+					</div>
+					<div class="form-group">
+						<label ">FECHA DE NACIMIENTO (CALENDARIO)</label>
+						<input type="text" class="form-control" name="fecha_nacimiento" id="datepicker1">
+					</div>
+					
+				</form>
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md col-sm">
+				
+			</div>			
+		</div> -->
+		<div class="fixed-bottom text-center">
+			<div>
+				<p>
+					<i  class="fab fa-sistrix hidden-md-up" aria-hidden="true"></i><span class="hidden-md-up"> Detalles </span>
+					<i class="fas fa-edit"></i> Editar 
+					<i class="fas fa-trash-alt"></i> Borrar 
+				</p>
+			</div>
+			<div>
+				<span class="">DAW 2018</span>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/events.js"></script>
+	<script src="js/cliente.js"></script>
+	<script src="js/clienteList.js"></script>
+	<script src="js/clienteListView.js"></script>
+	<script src="js/clienteView.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
