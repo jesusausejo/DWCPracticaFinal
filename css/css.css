@@ -9,3 +9,6 @@ a:hover{
 div.formulario{
 	display: block;
 }
+td.pointer{
+	cursor: pointer;
+}

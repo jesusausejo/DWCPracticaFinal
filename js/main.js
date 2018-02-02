@@ -27,7 +27,7 @@ $('body').on("click","#enviar", function(){
 		sexo: sexo,
 		fechaNacimiento: $("#datepicker1").val()
 	}
-	$('#editarFormulario').modal('hide');
+	$('#modalNew').modal('hide');
 	clienteList.crearCliente(json);
 });
 
@@ -42,6 +42,14 @@ $('.tabla').on("click", ".editar", function(){
 		id: id
 	}
 	clienteList.modificar(json, "consulta");
+});
+
+$('.tabla').on("click", ".ver", function(){
+	var id = $(this).closest("tr").attr("data-id");
+	var json = {
+		id: id
+	}
+	clienteList.ver(json);
 });
 
 $('body').on("click","#enviarEdit", function(){

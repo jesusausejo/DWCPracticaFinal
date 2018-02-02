@@ -66,6 +66,17 @@ var clienteList = (function(){
 	};
 	my.modificar = modificar;
 
+	var ver = function(json){
+		$.post( config.getUrl()+"actualizar.php", json, function( data ) {
+			var context = {
+	    		person:[]
+	    	};
+	    	context.person.push(data[0]);
+	     	events.publish('printModalVer', context);
+		}, "json");
+	};
+	my.ver = ver;
+
 	var encontrarCliente = function(id){
 		for (var i=0; i<=clientes.length; i++) {
 			if(clientes[i].id==id) return i;
