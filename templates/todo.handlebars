@@ -1,0 +1,12 @@
+{{#each person}}
+	<tr data-id="{{id}}">
+		<td>{{nombres}}</td>
+		<td>{{ciudad}}</td>
+		<td>{{sexo}}</td>
+		<td>{{telefono}}</td>
+		<td>{{fecha fechaNacimiento}}{{fecha fecha_nacimiento}}</td>
+		<td class="editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+		<td class="borrar"><i class="fa fa-trash" aria-hidden="true"></i></td>
+	</tr>
+
+{{/each}}
