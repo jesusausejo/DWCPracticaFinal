@@ -25,7 +25,14 @@ class SqlQuery{
 	 * @param String $value value set
 	 */
 	public function setString($value){
-		$value = mysql_real_escape_string($value);
+		$transaction = Transaction::getCurrentTransaction();
+		if(!$transaction){
+			$connection = new Connection();
+		}else{
+			$connection = $transaction->getConnection();
+		}
+		var_dump($connection);
+		$value = mysqli_real_escape_string($connection->getconection(),$value);
 		$this->params[$this->idx++] = "'".$value."'";
 	}
 	
@@ -35,7 +42,14 @@ class SqlQuery{
 	 * @param String $value value to set
 	 */
 	public function set($value){
-		$value = mysql_real_escape_string($value);
+		$transaction = Transaction::getCurrentTransaction();
+		if(!$transaction){
+			$connection = new Connection();
+		}else{
+			$connection = $transaction->getConnection();
+		}
+		//var_dump($connection);
+		$value = mysqli_real_escape_string($connection->getconection(),$value);
 		$this->params[$this->idx++] = "'".$value."'";
 	}
 	

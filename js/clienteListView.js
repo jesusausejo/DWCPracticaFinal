@@ -13,7 +13,8 @@ var clienteListView = (function () {
       $("#nombres1").val("");
       $("#ciudad1").val("");
       $("#telefono1").val("");
-      $("#datepicker1").val("");
+      $("#direccion1").val("");
+      $("#provincia1").val("");
    }
    function remove(context) {
       var list = context.list;
@@ -32,6 +33,9 @@ var clienteListView = (function () {
       $("#ciudad2").val("");
       $("#telefono2").val("");
       $("#datepicker2").val("");
+      $("#direccion2").val("");
+      $("#provincia2").val("");
+      $("#fehcaAlta2").val("");
 
       $('#editarFormulario').modal('hide');
    }

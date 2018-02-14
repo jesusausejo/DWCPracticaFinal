@@ -14,6 +14,10 @@ if(isset($_POST['submit'])){
 	$cliente->telefono = htmlspecialchars(trim($_POST['telefono']));
 	$cliente->fechaNacimiento = htmlspecialchars(trim($_POST['fecha_nacimiento']));
 
+	$cliente->direccion = htmlspecialchars(trim($_POST['direccion']));
+	$cliente->provincia = htmlspecialchars(trim($_POST['provincia']));
+	$cliente->fechaAlta = date("Y-m-d H:i:s");
+
 	//start new transaction
 	$transaction = new Transaction();
 	//obtain clienteDAOFactory
@@ -25,7 +29,7 @@ if(isset($_POST['submit'])){
 //echo json_encode($clientes, JSON_FORCE_OBJECT);
 	//$objCliente=new Cliente;
 	if ( $id >0){
-    	echo json_encode(array("id"=>$id), JSON_FORCE_OBJECT);
+    	echo json_encode(array("id"=>$id, "fecha"=>$cliente->fechaAlta), JSON_FORCE_OBJECT);
 	}else{
 		echo json_encode(array("error"=>"Nuevo:Se produjo un error. Intente más tarde"), JSON_FORCE_OBJECT);
 	} 

@@ -13,9 +13,5 @@
 	require_once('class/dto/Cliente.class.php');
 	require_once('class/mysql/ClienteMySqlDAO.class.php');
 	require_once('class/mysql/ext/ClienteMySqlExtDAO.class.php');
-	require_once('class/dao/ReciboDAO.class.php');
-	require_once('class/dto/Recibo.class.php');
-	require_once('class/mysql/ReciboMySqlDAO.class.php');
-	require_once('class/mysql/ext/ReciboMySqlExtDAO.class.php');
 
 ?>

@@ -14,13 +14,6 @@ class DAOFactory{
 		return new ClienteMySqlExtDAO();
 	}
 
-	/**
-	 * @return ReciboDAO
-	 */
-	public static function getReciboDAO(){
-		return new ReciboMySqlExtDAO();
-	}
-
 
 }
 ?>

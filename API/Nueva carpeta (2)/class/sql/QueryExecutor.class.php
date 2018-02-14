@@ -29,14 +29,14 @@ class QueryExecutor{
 //                }
 		$result = $connection->executeQuery($query);
 		if(!$result){
-			throw new Exception("SQL Error: -->".$query."<--" . mysql_error());
+			throw new Exception("SQL Error: -->".$query."<--" . mysqli_error($connection->getconection()));
 		}
 		$i=0;
 		$tab = array();
-		while ($row = mysql_fetch_array($result)){
+		while ($row = mysqli_fetch_array($result)){
 			$tab[$i++] = $row;
 		}
-		mysql_free_result($result);
+		mysqli_free_result($result);
 		if(!$transaction){
 			$connection->close();
 		}
@@ -56,12 +56,18 @@ class QueryExecutor{
 		if(!$result){
 			throw new Exception("SQL Error: -->".$query."<--" . mysql_error());
 		}
-		return mysql_affected_rows();		
+		return mysqli_affected_rows($connection->getconection());			
 	}
 
 	public static function executeInsert($sqlQuery){
+		$transaction = Transaction::getCurrentTransaction();
+		if(!$transaction){
+			$connection = new Connection();
+		}else{
+			$connection = $transaction->getConnection();
+		}		
 		QueryExecutor::executeUpdate($sqlQuery);
-		return mysql_insert_id();
+		return mysqli_insert_id($connection->getconection());
 	}
 	
 	/**
@@ -79,9 +85,9 @@ class QueryExecutor{
 		}
 		$result = $connection->executeQuery($sqlQuery->getQuery());
 		if(!$result){
-			throw new Exception("SQL Error: -->".$sqlQuery->getQuery()."<--" . mysql_error());
+			throw new Exception("SQL Error: -->".$sqlQuery->getQuery()."<--" . mysqli_error());
 		}
-		$row = mysql_fetch_array($result);		
+		$row = mysqli_fetch_array($connection->getconection(),$result);		
 		return $row[0];
 	}
 

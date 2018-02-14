@@ -25,7 +25,9 @@ $('body').on("click","#enviar", function(){
 		alternativas: sexo,
 		fecha_nacimiento: $("#datepicker1").val(),
 		sexo: sexo,
-		fechaNacimiento: $("#datepicker1").val()
+		fechaNacimiento: $("#datepicker1").val(),
+		direccion: $("#direccion1").val(),
+		provincia: $("#provincia1").val()
 	}
 	$('#modalNew').modal('hide');
 	clienteList.crearCliente(json);
@@ -68,7 +70,10 @@ $('body').on("click","#enviarEdit", function(){
 		alternativas: sexo,
 		fecha_nacimiento: clienteList.formatoFecha($("#datepicker2").val()),
 		sexo: sexo,
-		fechaNacimiento: clienteList.formatoFecha($("#datepicker2").val())
+		fechaNacimiento: clienteList.formatoFecha($("#datepicker2").val()),
+		direccion: $("#direccion2").val(),
+		provincia: $("#provincia2").val(),
+		fechaAlta: $("#fechaAlta2").val()
 	}
 
 	clienteList.modificar(json, "envio");

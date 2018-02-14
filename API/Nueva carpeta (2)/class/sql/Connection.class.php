@@ -11,7 +11,9 @@ class Connection{
 	public function Connection(){
 		$this->connection = ConnectionFactory::getConnection();
 	}
-
+	public function getconection(){
+		return $this->connection;
+	}
 	public function close(){
 		ConnectionFactory::close($this->connection);
 	}
@@ -23,7 +25,7 @@ class Connection{
 	 * @return wynik zapytania
 	 */
 	public function executeQuery($sql){
-		return mysql_query($sql, $this->connection);
+		return mysqli_query($this->connection,$sql);
 	}
 }
 ?>

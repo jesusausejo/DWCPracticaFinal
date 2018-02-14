@@ -1,11 +1,14 @@
 {{#each person}}
 	<tr data-id="{{id}}">
 		<td>{{nombres}}</td>
-		<td class="hidden-sm-down">{{ciudad}}</td>
+		<td class="hidden-md-down">{{ciudad}}</td>
 		<td>{{sexo}}</td>
-		<td class="hidden-sm-down">{{telefono}}</td>
-		<td class="hidden-sm-down">{{fecha fechaNacimiento}}{{fecha fecha_nacimiento}}</td>
-		<td class="ver pointer hidden-md-up"><i class="fab fa-sistrix" aria-hidden="true"></i></td>
+		<td class="hidden-md-down">{{telefono}}</td>
+		<td class="hidden-md-down">{{fecha fechaNacimiento}}{{fecha fecha_nacimiento}}</td>
+		<td class="hidden-md-down">{{direccion}}</td>
+		<td class="hidden-md-down">{{provincia}}</td>
+		<td class="hidden-md-down">{{fechaAlta}}</td>
+		<td class="ver pointer hidden-lg-up"><i class="fab fa-sistrix" aria-hidden="true"></i></td>
 		<td class="editar pointer"><i class="fas fa-edit"></i></td>
 		<td class="borrar pointer"><i class="fas fa-trash-alt"></i></td>
 	</tr>

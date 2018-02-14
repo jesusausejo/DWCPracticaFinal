@@ -19,13 +19,19 @@ var clienteList = (function(){
 		        var sexo = data[i].sexo;
 		        var telefono = data[i].telefono;
 		        var fechaNac = data[i].fechaNacimiento;
+		        var dir = data[i].direccion;
+		        var prov = data[i].provincia;
+		        var fechaAlta1 = data[i].fechaAlta;
 		        context.person.push({
 		          id: id,
 		          nombres: nombre,
 		          ciudad: ciudad,
 		          sexo: sexo,
 		          telefono: telefono,
-		          fechaNacimiento: fechaNac
+		          fechaNacimiento: fechaNac,
+		          direccion: dir,
+		          provincia: prov,
+		          fechaAlta: fechaAlta1
 		        });
 		        clientes.push(factory.createCliente(context.person[i]));
 	     	}
@@ -114,6 +120,7 @@ var clienteList = (function(){
 
 	    	
 			json.id = data.id;
+			json.fechaAlta = data.fecha;
 			clientes.push(factory.createCliente(json));
 			var lista = {
 				person: clientes

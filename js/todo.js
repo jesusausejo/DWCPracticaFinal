@@ -7,16 +7,22 @@ templates['todo'] = template({"1":function(container,depth0,helpers,partials,dat
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "\">\r\n		<td>"
     + alias4(((helper = (helper = helpers.nombres || (depth0 != null ? depth0.nombres : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"nombres","hash":{},"data":data}) : helper)))
-    + "</td>\r\n		<td class=\"hidden-sm-down\">"
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
     + alias4(((helper = (helper = helpers.ciudad || (depth0 != null ? depth0.ciudad : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"ciudad","hash":{},"data":data}) : helper)))
     + "</td>\r\n		<td>"
     + alias4(((helper = (helper = helpers.sexo || (depth0 != null ? depth0.sexo : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sexo","hash":{},"data":data}) : helper)))
-    + "</td>\r\n		<td class=\"hidden-sm-down\">"
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
     + alias4(((helper = (helper = helpers.telefono || (depth0 != null ? depth0.telefono : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"telefono","hash":{},"data":data}) : helper)))
-    + "</td>\r\n		<td class=\"hidden-sm-down\">"
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
     + alias4((helpers.fecha || (depth0 && depth0.fecha) || alias2).call(alias1,(depth0 != null ? depth0.fechaNacimiento : depth0),{"name":"fecha","hash":{},"data":data}))
     + alias4((helpers.fecha || (depth0 && depth0.fecha) || alias2).call(alias1,(depth0 != null ? depth0.fecha_nacimiento : depth0),{"name":"fecha","hash":{},"data":data}))
-    + "</td>\r\n		<td class=\"ver pointer hidden-md-up\"><i class=\"fab fa-sistrix\" aria-hidden=\"true\"></i></td>\r\n		<td class=\"editar pointer\"><i class=\"fas fa-edit\"></i></td>\r\n		<td class=\"borrar pointer\"><i class=\"fas fa-trash-alt\"></i></td>\r\n	</tr>\r\n\r\n";
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
+    + alias4(((helper = (helper = helpers.direccion || (depth0 != null ? depth0.direccion : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"direccion","hash":{},"data":data}) : helper)))
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
+    + alias4(((helper = (helper = helpers.provincia || (depth0 != null ? depth0.provincia : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"provincia","hash":{},"data":data}) : helper)))
+    + "</td>\r\n		<td class=\"hidden-md-down\">"
+    + alias4(((helper = (helper = helpers.fechaAlta || (depth0 != null ? depth0.fechaAlta : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fechaAlta","hash":{},"data":data}) : helper)))
+    + "</td>\r\n		<td class=\"ver pointer hidden-lg-up\"><i class=\"fab fa-sistrix\" aria-hidden=\"true\"></i></td>\r\n		<td class=\"editar pointer\"><i class=\"fas fa-edit\"></i></td>\r\n		<td class=\"borrar pointer\"><i class=\"fas fa-trash-alt\"></i></td>\r\n	</tr>\r\n\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 

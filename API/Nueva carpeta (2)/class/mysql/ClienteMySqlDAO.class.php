@@ -3,7 +3,7 @@
  * Class that operate on table 'cliente'. Database Mysql.
  *
  * @author: http://phpdao.com
- * @date: 2018-02-13 19:46
+ * @date: 2018-01-17 21:01
  */
 class ClienteMySqlDAO implements ClienteDAO{
 
@@ -57,7 +57,7 @@ class ClienteMySqlDAO implements ClienteDAO{
  	 * @param ClienteMySql cliente
  	 */
 	public function insert($cliente){
-		$sql = 'INSERT INTO cliente (nombres, ciudad, sexo, telefono, fecha_nacimiento, direccion, provincia, fechaAlta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO cliente (nombres, ciudad, sexo, telefono, fecha_nacimiento) VALUES (?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->set($cliente->nombres);
@@ -65,9 +65,6 @@ class ClienteMySqlDAO implements ClienteDAO{
 		$sqlQuery->set($cliente->sexo);
 		$sqlQuery->set($cliente->telefono);
 		$sqlQuery->set($cliente->fechaNacimiento);
-		$sqlQuery->set($cliente->direccion);
-		$sqlQuery->set($cliente->provincia);
-		$sqlQuery->set($cliente->fechaAlta);
 
 		$id = $this->executeInsert($sqlQuery);	
 		$cliente->id = $id;
@@ -80,7 +77,7 @@ class ClienteMySqlDAO implements ClienteDAO{
  	 * @param ClienteMySql cliente
  	 */
 	public function update($cliente){
-		$sql = 'UPDATE cliente SET nombres = ?, ciudad = ?, sexo = ?, telefono = ?, fecha_nacimiento = ?, direccion = ?, provincia = ?, fechaAlta = ? WHERE id = ?';
+		$sql = 'UPDATE cliente SET nombres = ?, ciudad = ?, sexo = ?, telefono = ?, fecha_nacimiento = ? WHERE id = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->set($cliente->nombres);
@@ -88,9 +85,6 @@ class ClienteMySqlDAO implements ClienteDAO{
 		$sqlQuery->set($cliente->sexo);
 		$sqlQuery->set($cliente->telefono);
 		$sqlQuery->set($cliente->fechaNacimiento);
-		$sqlQuery->set($cliente->direccion);
-		$sqlQuery->set($cliente->provincia);
-		$sqlQuery->set($cliente->fechaAlta);
 
 		$sqlQuery->setNumber($cliente->id);
 		return $this->executeUpdate($sqlQuery);
@@ -140,27 +134,6 @@ class ClienteMySqlDAO implements ClienteDAO{
 		return $this->getList($sqlQuery);
 	}
 
-	public function queryByDireccion($value){
-		$sql = 'SELECT * FROM cliente WHERE direccion = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->getList($sqlQuery);
-	}
-
-	public function queryByProvincia($value){
-		$sql = 'SELECT * FROM cliente WHERE provincia = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->getList($sqlQuery);
-	}
-
-	public function queryByFechaAlta($value){
-		$sql = 'SELECT * FROM cliente WHERE fechaAlta = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->getList($sqlQuery);
-	}
-
 
 	public function deleteByNombres($value){
 		$sql = 'DELETE FROM cliente WHERE nombres = ?';
@@ -197,27 +170,6 @@ class ClienteMySqlDAO implements ClienteDAO{
 		return $this->executeUpdate($sqlQuery);
 	}
 
-	public function deleteByDireccion($value){
-		$sql = 'DELETE FROM cliente WHERE direccion = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->executeUpdate($sqlQuery);
-	}
-
-	public function deleteByProvincia($value){
-		$sql = 'DELETE FROM cliente WHERE provincia = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->executeUpdate($sqlQuery);
-	}
-
-	public function deleteByFechaAlta($value){
-		$sql = 'DELETE FROM cliente WHERE fechaAlta = ?';
-		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->set($value);
-		return $this->executeUpdate($sqlQuery);
-	}
-
 
 	
 	/**
@@ -234,9 +186,6 @@ class ClienteMySqlDAO implements ClienteDAO{
 		$cliente->sexo = $row['sexo'];
 		$cliente->telefono = $row['telefono'];
 		$cliente->fechaNacimiento = $row['fecha_nacimiento'];
-		$cliente->direccion = $row['direccion'];
-		$cliente->provincia = $row['provincia'];
-		$cliente->fechaAlta = $row['fechaAlta'];
 
 		return $cliente;
 	}

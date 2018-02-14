@@ -18,6 +18,9 @@ var classCliente = (function(cli){
 	my.sexo = cli.sexo;
 	my.telefono = cli.telefono;
 	my.fecha_nacimiento = cli.fechaNacimiento;
+	my.direccion = cli.direccion;
+	my.provincia = cli.provincia;
+	my.fechaAlta = cli.fechaAlta;
 
 	return my;
 

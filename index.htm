@@ -59,78 +59,38 @@
 
 	<div class="container">
 		<div class="row tabla">
-			<div class="col-xl-2 col-lg-2 col-md col-sm">
+			<div class="col-xl-2 col-lg col-md col-sm">
 
 			</div>
-			<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+			<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
 				<div class="align-top" ><button type="button" id="addCliente"><i class="fa fa-plus-circle" aria-hidden="true"></i> <span class="hidden-sm-down">AÑADIR CLIENTE</span></button></div>
 				<table class="table table-hover align-self-center">
 					<thead class="thead-dark">
 						<tr>
 							<th>Nombres</th>
-							<th class="hidden-sm-down">Ciudad</th>
+							<th class="hidden-md-down">Ciudad</th>
 							<th>Sexo</th>
-							<th class="hidden-sm-down">Telefono</th>
-							<th class="hidden-sm-down">Fecha Nacimiento</th>
-							<th class="hidden-md-up" colspan="3">Opciones</th>
-							<th class="hidden-sm-down"  colspan="2">Opciones</th>
+							<th class="hidden-md-down">Telefono</th>
+							<th class="hidden-md-down">Fecha Nacimiento</th>
+							<th class="hidden-md-down">Dirección</th>
+							<th class="hidden-md-down">Provincia</th>
+							<th class="hidden-md-down">Fecha de alta</th>
+							<th class="hidden-lg-up" colspan="3">Opciones</th>
+							<th class="hidden-md-down"  colspan="2">Opciones</th>
 						</tr>
 					</thead>
 					<tbody id="result">
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xl-2 col-lg-2 col-md col-sm">
+			<div class="col-xl-2 col-lg col-md col-sm">
 
 			</div>
 		</div>
-		<!-- <div class="row formulario">
-			<div class="col-xl-4 col-lg-4 col-md col-sm">
-
-			</div>
-			<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-				<form>
-					<div class="form-group">
-						<label ">NOMBRES</label>
-						<input type="text" class="form-control" id="nombres1" onkeyup="this.value=this.value.toUpperCase()">
-					</div>
-					<div class="form-group">
-						<label ">CIUDAD</label>
-						<input type="text" class="form-control" id="ciudad1" onkeyup="this.value=this.value.toUpperCase()">
-					</div>
-					<div class="form-check form-check-inline">
-						
-						<label class="form-check-label">
-							<input class="form-check-input" type="radio" name="exampler" id="alternativas1M" value="M">
-						MASCULINO
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						
-						<label class="form-check-label">
-							<input class="form-check-input" type="radio" name="exampler" id="alternativas1F" value="F">
-						FEMENINO
-						</label>
-					</div>
-					<div class="form-group">
-						<label ">TELEFONO</label>
-						<input type="text" class="form-control" id="telefono1" onkeyup="this.value=this.value.toUpperCase()">
-					</div>
-					<div class="form-group">
-						<label ">FECHA DE NACIMIENTO (CALENDARIO)</label>
-						<input type="text" class="form-control" name="fecha_nacimiento" id="datepicker1">
-					</div>
-					
-				</form>
-			</div>
-			<div class="col-xl-4 col-lg-4 col-md col-sm">
-				
-			</div>			
-		</div> -->
 		<div class="fixed-bottom text-center">
 			<div>
 				<p>
-					<i  class="fab fa-sistrix hidden-md-up" aria-hidden="true"></i><span class="hidden-md-up"> Detalles </span>
+					<i  class="fab fa-sistrix hidden-lg-up" aria-hidden="true"></i><span class="hidden-lg-up"> Detalles </span>
 					<i class="fas fa-edit"></i> Editar 
 					<i class="fas fa-trash-alt"></i> Borrar 
 				</p>
